@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Correctwords Page</title>
+</head>
+<body>
+<div style="width: 100%; height: 50px; background-color:darkolivegreen;text-align:center; "><span style="color: white; font-size: 20px; font:bold; align-content: center ">Correct words!!</span></div>
+
+ <form method="post" action="{% url 'check' %}">
+ <div style="margin-top: 20px;text-align:center;">
+     {%csrf_token%}
+ <div style=" float: left">
+     Please input words:
+        <textarea rows="10" cols="15" name="input">
+</textarea>
+ </div>
+  <div style=" float: left;margin-left: 20px;margin-right: 20px">
+        <input type="submit" value="Correct!"><br><br><br><br>
+   </div>
+     <div style=" float: left">  Output words:&nbsp;</div>
+     <div style=" float: left; width: 120px;height: auto; margin-left:40px; border:1px solid dimgray;">
+         {% autoescape off %}
+       {{data1}}
+     {% endautoescape %}
+     </div>
+</div>
+    </form>
+
+</body>
+</html>
